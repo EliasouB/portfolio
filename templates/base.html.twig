@@ -1,12 +1,99 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta name="description" content=""/>
+		<meta name="author" content=""/>
+		<title>
+			{% block title %}Mon portfolio
+			{% endblock %}
+		</title>
+		<link
+		rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+		<!-- Google fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
+		<!-- CSS -->
+		<link href="{{ asset('css/styles.css') }}" rel="stylesheet"/> {% block stylesheets %}{% endblock %}
+		</head>
+		<body
+			id="page-top">
+			<!-- Navigation-->
+			<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+				<div class="container">
+					<a class="navbar-brand js-scroll-trigger" href="{{ path('home')}}">Accueil</a>
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive">
+						<ul class="navbar-nav text-uppercase ml-auto">
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="{{ path('about')}}">A propos</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="{{ path('training')}}">Mon parcours</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="{{ path('skills')}}">Compétences</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="{{ path('portfolio')}}">Portfolio</a>
+							</li>
+							{% if app.user %}
+								<li class="nav-item">
+									<a class="nav-link js-scroll-trigger" href="{{ path('portfolio_create') }}">Création Portfolio</a>
+								</li>
+							{% endif %}
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="{{ path('contact')}}">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			{% block withoutContainer %}{% endblock %}
+			<section class="page-section">
+				<div class="container">
+					{% for label, messages in app.flashes %}
+						{% for message in messages %}
+							<div class="alert alert-{{ label }}">
+								{{ message }}
+							</div>
+						{% endfor %}
+					{% endfor %}
+					{% block body %}{% endblock %}
+				</div>
+			</section>
+			<!-- Footer-->
+			<footer class="footer py-4">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-4 text-lg-left">Copyright © Your Website 2020</div>
+						<div class="col-lg-4 my-3 my-lg-0">
+							<a href="https://fr.linkedin.com/in/elias-bouabdellah-376997174?challengeId=AQEEAh17LQRqjAAAAXJ_IGxxNDNaEqa6axe-Zu8lcDInjPfDda07qDpr5PPjQLNzVbGjMRKae0Bi8Mu6qwL4INc70av6NrtXwQ&submissionId=da779d6e-4c54-1516-1d9f-7db686566846" class="btn btn-dark btn-social mx-2">
+								<i class="fab fa-linkedin-in"></i><br>
+							</a>
+						</div>
+						<div class="col-lg-4 text-lg-right">
+							<a class="mr-3" href="#!">Privacy Policy</a>
+							<a class="mr-3" href="#!">Terms of Use</a>
+							{% if not app.user %}
+								<a href="{{ path('security_login')}}">Connexion</a>
+							{% else %}
+								<a href="{{ path('security_logout')}}">Déconnexion</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- Script -->
+			<!-- Bootstrap core JS--><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+			<!-- Third party plugin JS-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+			<!-- Font Awesome icons (free version)-->
+			<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+			{% block javascripts %}{% endblock %}
+		</body>
+	</html>

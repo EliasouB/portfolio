@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formPortfolio 'bootstrap_4_horizontal_layout.html.twig' %}
+
+{% block body %}
+	<div class="text-center">
+		<h2 class="section-heading text-uppercase">Création d'un Portfolio</h2>
+	</div>
+	{{ form_start(formPortfolio) }}
+
+{{ form_row(formPortfolio.title, {'label': 'Titre','attr' : {'placeholder' : "Titre du portfolio"}}) }}
+
+{{ form_row(formPortfolio.subtitle, {'label': 'Sous-titre','attr' : {'placeholder' : "Sous-titre du portfolio"}}) }}
+
+{{ form_row(formPortfolio.image, {'label': 'Image','attr' : {'placeholder' : "Titre de l'image"}}) }}
+
+{{ form_row(formPortfolio.content, {'label': 'Contenu','attr' : {'placeholder' : "Titre du contenu"}}) }}
+
+	{{ form_row(formPortfolio.url, {'attr' : {'placeholder' : "Titre de l'Url"}}) }}
+
+	<button type="submit" class="btn btn-success">Ajouter le portfolio</button>
+
+	{{ form_end(formPortfolio) }}
+
+
+{% endblock %}

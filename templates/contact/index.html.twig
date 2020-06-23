@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<!-- Contact-->
+	<div class="text-center">
+		<h2 class="section-heading text-uppercase">Contactez-moi</h2>
+		<h3 class="section-subheading text-muted">Je me ferai un plaisir de vous répondre</h3>
+	</div>
+	{{form_start(form)}}
+{{form_row(form.name, {'label': ' ','attr' : {'placeholder' : "Nom"}}) }}
+
+{{form_row(form.email, {'label': ' ','attr' : {'placeholder' : "Email"}}) }}
+
+{{form_row(form.tel, {'label': ' ','attr' : {'placeholder' : "Téléphone"}}) }}
+
+{{form_row(form.content, {'label': ' ','attr' : {'placeholder' : "Message"}}) }}
+
+	<div class="form-group">
+		<button type="submit" class="btn btn-success">Envoyer</button>
+	</div>
+	{{form_end(form)}}
+{% endblock %}

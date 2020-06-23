@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home
+{% endblock %}
+
+{% block withoutContainer %}
+	<!-- Home-->
+	<header class="masthead">
+		<div class="container">
+			<div class="masthead-subheading">Elias Bouabdellah</div>
+			<div class="masthead-heading text-uppercase">Developpeur web Junior</div>
+			<div class="masthead-subheading">Spécialisé en PHP symfony</div>
+			<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ path('about')}}">En savoir plus</a>
+
+		</div>
+
+	</header>
+{% endblock %}
+
+{% block body %}
+
+	<!-- About-->
+	<div class="py-5">
+		<div class="row">
+			<div class="col-md-3 col-sm-6 my-3">
+				<a href=""><img class="img-fluid d-block mx-auto" src="assets/img/logos/envato.jpg" alt=""/></a>
+			</div>
+			<div class="col-md-3 col-sm-6 my-3">
+				<a href=""><img class="img-fluid d-block mx-auto" src="assets/img/logos/themeforest.jpg" alt=""/></a>
+			</div>
+			<div class="col-md-3 col-sm-6 my-3">
+				<a href=""><img class="img-fluid d-block mx-auto" src="assets/img/logos/designmodo.jpg" alt=""/></a>
+			</div>
+			<div class="col-md-3 col-sm-6 my-3">
+				<a href=""><img class="img-fluid d-block mx-auto" src="assets/img/logos/creative-market.jpg" alt=""/></a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

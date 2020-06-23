@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block title %}Training
+{% endblock %}
+{% block body %}
+	<!-- Training-->
+	<div class="text-center">
+		<h2 class="section-heading text-uppercase">Mon Parcours</h2>
+		<h3 class="section-subheading text-muted">Parcours d'études</h3>
+	</div>
+	<ul class="timeline">
+		<li class="timeline-inverted">
+			<div class="timeline-image"></div>
+			<div class="timeline-panel">
+				<div class="timeline-heading">
+					<h4>2012-2013</h4>
+					<h4 class="subheading">BTS Communication 1ère année validée</h4>
+				</div>
+				<div class="timeline-body">
+					<p class="text-muted">Communication des Entreprises</p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/.jpg" alt=""/></div>
+			<div class="timeline-panel">
+				<div class="timeline-heading">
+					<h4>2013-2017</h4>
+					<h4 class="subheading">Ecole de Management Léonard de Vinci Niveau bac +3 validé</h4>
+				</div>
+				<div class="timeline-body">
+					<p class="text-muted"></p>
+					<p>Marketing international</p>
+					<p>Management des ressources humaines</p>
+					<p>Contrôle de gestion & Mathématiques
+					</p>
+				</div>
+			</div>
+		</li>
+		<li class="timeline-inverted">
+			<div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/.jpg" alt=""/></div>
+			<div class="timeline-panel">
+				<div class="timeline-heading">
+					<h4>2018-2020</h4>
+					<h4 class="subheading">OpenClassrooms Titre RNCP Bac+2 « Développeur Web Junior »</h4>
+				</div>
+				<div class="timeline-body">
+					<p class="text-muted"></p>
+					<p>Intégration d'une maquette avec HTML5 et CSS3</p>
+					<p>Réalisation d'un site WordPress</p>
+					<p>Conception d'une carte interactive de location de vélo avec Javascript</p>
+					<p>Création d'un blog en PHP avec le design pattern MVC</p>
+				</div>
+			</div>
+		</li>
+		<li class="timeline-inverted">
+			<div class="timeline-image">
+				<h4>
+					<a class="competences" href="{{ path('skills')}}">
+						Voir plus en details mes compétences</a>
+				</h4>
+			</div>
+		</li>
+	</ul>
+{% endblock %}
