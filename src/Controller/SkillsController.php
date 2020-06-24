@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SkillsController extends AbstractController
 {
     /**
-     * @Route("/skills", name="skills")
+     * @Route("/competences", name="skills")
      */
     public function index()
     {

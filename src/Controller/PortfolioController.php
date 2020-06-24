@@ -30,7 +30,7 @@ class PortfolioController extends AbstractController
         ]);
     }
     /**
-     * @Route("/portfolio/new", name="portfolio_create")
+     * @Route("/portfolio/creation-portfolio", name="portfolio_create")
      */
     public function form(Request $request, EntityManagerInterface $manager)
     {

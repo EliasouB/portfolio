@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TrainingController extends AbstractController
 {
     /**
-     * @Route("/training", name="training")
+     * @Route("/mon-parcours", name="training")
      */
     public function index()
     {
