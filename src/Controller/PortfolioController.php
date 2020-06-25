@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
@@ -30,6 +31,7 @@ class PortfolioController extends AbstractController
         ]);
     }
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/portfolio/creation-portfolio", name="portfolio_create")
      */
     public function form(Request $request, EntityManagerInterface $manager)
