@@ -1,5 +1,7 @@
 
 ###> symfony/framework-bundle ###
+/.env
+/.env.test
 /.env.local
 /.env.local.php
 /.env.*.local
@@ -16,4 +18,3 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 deploy
-/.env
